@@ -1,0 +1,6 @@
+function logoTurn() {
+	$("img").animate({
+		
+
+	});
+}
