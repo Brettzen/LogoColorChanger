@@ -1,4 +1,4 @@
-var colorClass = ["red", "green", "blue", "gray"];
+var colorClass = ["red", "green", "blue", "grey"];
 var i = 0;
 var e = 360;
 
@@ -13,17 +13,21 @@ function rotationChange() {
 }
 
 function logoRotate() {
-	// $("img").animate({
 	rotationChange();
-	$('img').css({
-		'-webkit-transform': 'rotate(' + e + 'deg)',  //Safari 3.1+, Chrome  
-        '-moz-transform': 'rotate(' + e + 'deg)',     //Firefox 3.5-15  
-        '-ms-transform': 'rotate(' + e + 'deg)',      //IE9+  
-        '-o-transform': 'rotate(' + e + 'deg)',       //Opera 10.5-12.00  
-        'transform': 'rotate(' + e + 'deg)',          //Firefox 16+, Opera 12.50+  
+	$("img").animate({
+		'width': '26%'
+	}, {
+		duration: 500,
+		step: function(now, fx) {
+			$('img').css({
+				'-webkit-transform': 'rotate(' + e + 'deg)',  //Safari 3.1+, Chrome  
+		        '-moz-transform': 'rotate(' + e + 'deg)',     //Firefox 3.5-15  
+		        '-ms-transform': 'rotate(' + e + 'deg)',      //IE9+  
+		        '-o-transform': 'rotate(' + e + 'deg)',       //Opera 10.5-12.00  
+		        'transform': 'rotate(' + e + 'deg)',          //Firefox 16+, Opera 12.50+  
+			})
+		}
 	});
-
-	// });
 }
 
 
@@ -40,7 +44,9 @@ function classChange() {
 function colorChange() {
 	$('body').removeClass(colorClass[i]);
 	classChange();
-	$('body').addClass(colorClass[i]);
+	$('body').animate({
+		backgroundColor: colorClass[i]
+	});
 	
 }
 
