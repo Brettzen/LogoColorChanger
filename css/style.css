@@ -12,3 +12,7 @@ img {
 	width: 25%;
 	margin: 10% auto 0;
 }
+
+.red {
+	background-color: red;
+}
